@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import axios from 'axios';
 
 export default class CreateUser extends Component {
   constructor(props) {
@@ -27,6 +28,9 @@ export default class CreateUser extends Component {
 
     console.log(newUser);
 
+    axios.post('http://localhost:5000/users/add', newUser)
+      .then(res => console.log(res.data));
+
     this.setState({
       username: ''
     });
@@ -36,7 +40,7 @@ export default class CreateUser extends Component {
     return (
       <div>
         <h3>Create New User</h3>
-        <form>
+        <form onSubmit={this.onSubmit}>
           <div>
             <label>Username: </label>
             <input type="text"
