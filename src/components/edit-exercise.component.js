@@ -2,7 +2,6 @@ import { React, Component } from 'react';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import axios from 'axios';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
 export default class EditExercise extends Component {
